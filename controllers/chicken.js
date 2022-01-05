@@ -4,7 +4,7 @@
 
 const Chicken = require('../models/Chicken');
 
-// create chicken
+// créer un chicken
 exports.createChicken = (req, res, next) => {
     const chicken = new Chicken({
         ...req.body
@@ -44,12 +44,12 @@ exports.editChicken = (req, res, next) => {
 
 // incrémenter steps
 exports.run = (req, res, next) => {
-    Chicken.updateOne({ _id: req.params.id }, { steps = steps + 1, _id: req.params.id })
-      .then(() => res.status(200).json({ message: 'steps ++ !'}))
+    Chicken.updateOne({ _id: req.params.id }, { ...req.body , _id: req.params.id })
+      .then(() => res.status(200).json({ message: 'steps++ !'}))
       .catch(error => res.status(400).json({ error }));
 };
 
-// 
+// patch
 exports.patchChicken = (req, res, next) => {
     Chicken.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
       .then(() => res.status(200).json({ message: 'chicken modifié !'}))
