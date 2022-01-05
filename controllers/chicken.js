@@ -44,9 +44,9 @@ exports.editChicken = (req, res, next) => {
 
 // incrémenter steps
 exports.run = (req, res, next) => {
-    Chicken.updateOne({ _id: req.params.id }, { ...req.body , _id: req.params.id })
-      .then(() => res.status(200).json({ message: 'steps++ !'}))
-      .catch(error => res.status(400).json({ error }));
+    Chicken.findByIdAndUpdate( _id = req.body.id, { $inc : {steps : 1}}, {new : true}).then(
+        () => res.status(200).json({ message: 'chicken steps incrementé !'})
+    ).catch(error => res.status(400).json({ error }));
 };
 
 // patch

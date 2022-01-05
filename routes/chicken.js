@@ -21,7 +21,11 @@ router.patch('/:id', chickenCtrl.patchChicken);
 // supression d'un chicken
 router.delete('/:id', chickenCtrl.deleteChicken);
 
+router.put('/run/:id', chickenCtrl.run);
+
 // recupération de tous les chickens
 router.use('/', chickenCtrl.getAllChicken);
+
+
 
 module.exports = router;

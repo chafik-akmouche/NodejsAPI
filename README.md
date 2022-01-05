@@ -1,4 +1,4 @@
-# Node js API
+# Test Node js API
 
 - Framwork : Express
 - BDD : mongodb sur le cloud
@@ -11,4 +11,6 @@ Routes :
   - PUT : ip:port/api/chicken/id=xx (modifier un chicken)
   - PATCH : ip:port/api/chicken/id=xx (modifier un chicken - envoie du champ mis à jour)
   - DELETE : ip:port/api/chicken/id=xx (supprimer un chicken)
+
+  - ip:port/api/chicken/run/id=xx (incrémenter steps) //à corriger
 
